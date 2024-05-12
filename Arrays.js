@@ -36,3 +36,39 @@ console.log(months); // (5) ['January', 'February', 'June', 'March', 'April']
 // 6. Slice - Copies a certain parts of array into a newly created array
 const lastThreeElements = months.slice(2,5);
 console.log(lastThreeElements); // (3) ['June', 'March', 'April']
+
+//--------------------------------For-each------------------------------------------
+
+const names = ['Jon', 'Jenny', 'Johnny'];
+
+names.forEach((name, i) => {
+    console.log(i, name);
+});
+
+/* 
+OR
+
+const logTheName = (name, i) => console.log(i, name);
+console.log(logTheName);
+*/
+
+// The return vale of forEach is undefined (does not store any value)
+
+const returnVal = names.forEach((name, i) => {
+    console.log(i, name);
+});
+
+console.log(returnVal); // undefined
+
+/*
+When to use it? When you want to do something with each element of an array
+
+When not to use it? When you want to stop or break the loop when some conditions are true
+*/
+
+let sum = 0;
+
+const numbers = [23, 34, 45, 56, 67];
+
+numbers.forEach((number) => sum += number );
+console.log(sum); // 225
