@@ -121,3 +121,15 @@ So, when myFunction is called, it can still access and use outerVariable.
 Think of it as if innerFunction has a little piece of memory from outerFunction stored with it, 
 allowing it to access the variables it needs, even when it's not directly inside outerFunction.
 */
+
+//------------------------------Part-5-------------------------------------------
+
+/*
+Difference between arrays forEach and array map is:
+
+=> forEach does not store any values (its return value is undefined),
+=> it allows a callback function that will allow us to change the entire array.
+
+=> Map method allocates memory in order to store and return values,
+=> it returns a new array while leaving the original array in its original state.
+*/
