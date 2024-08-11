@@ -17,29 +17,29 @@ console.log(lower, upper); // shubham SHUBHAM
 
 const cars = "I love Ferrari, Porsche and Volkswagen";
 
-console.log(cars.indexOf('Porsche')); // 16
+console.log(cars.indexOf("Porsche")); // 16
 
-console.log(cars.lastIndexOf('Ferrari')); // 7
+console.log(cars.lastIndexOf("Ferrari")); // 7
 
-console.log(cars.includes('Volkswagen')); // true
+console.log(cars.includes("Volkswagen")); // true
 
-console.log(cars.startsWith('love')); // false
-console.log(cars.startsWith('I')); // true
+console.log(cars.startsWith("love")); // false
+console.log(cars.startsWith("I")); // true
 
-console.log(cars.endsWith('Volkswagen')); // true
+console.log(cars.endsWith("Volkswagen")); // true
 
 //Getting a substring
 
 const city = "Chemnitz";
 
-console.log(city.slice(0,3)); // Che
+console.log(city.slice(0, 3)); // Che
 
 // Split a string
-console.log(city.split('')); // ['C', 'h', 'e', 'm', 'n', 'i', 't', 'z']
+console.log(city.split("")); // ['C', 'h', 'e', 'm', 'n', 'i', 't', 'z']
 
 const city1 = "Chemnitz is the third largest city in Saxony";
 
-console.log(city1.split(' ')); // ['Chemnitz', 'is', 'the', 'third', 'largest', 'city', 'of', 'Saxony']
+console.log(city1.split(" ")); // ['Chemnitz', 'is', 'the', 'third', 'largest', 'city', 'in', 'Saxony']
 
 // Reverse a string
 
