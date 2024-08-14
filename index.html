@@ -4,8 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      .menu-item {
+        background-color: black;
+        color: white;
+      }
+
+      .menu-item.active {
+        background-color: white;
+        color: black;
+      }
+    </style>
   </head>
+
   <body>
-    <script src="7_cloning"></script>
+    <h1>Javascript Essentials!</h1>
+
+    <!-- <input />
+    <h3 class="test" id="element-below-input">
+      Working on some tests here....
+    </h3>
+    <h2 class="test" id="element-below-input">
+      Working on some tests here....
+    </h2>
+    <h2 class="test" id="element-below-input">
+      Working on some tests here....
+    </h2>
+
+    <button>DO NOT CLICK THE BUTTON!!</button> -->
+
+    <ul>
+      <li onclick="menuClicked(this)" class="menu-item">Menu-item-1</li>
+      <li onclick="menuClicked(this)" class="menu-item active">Menu-item-2</li>
+      <li onclick="menuClicked(this)" class="menu-item">Menu-item-3</li>
+    </ul>
+
+    <script src="8_dom.js"></script>
   </body>
 </html>
