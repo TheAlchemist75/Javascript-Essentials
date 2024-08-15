@@ -9,12 +9,12 @@ const : They also provide block-level scoping, but their values cannot be reassi
 
 // Backticks (``) : It provides extended functionalities
 
-const name = 'Jane';
+const name = "Jane";
 const backticks = `Hello, ${name}`;
-console.log(backticks) //Output: Hello, Jane
+console.log(backticks); //Output: Hello, Jane
 
-const addition = `${3+5}`;
-console.log(addition) //Output: 8
+const addition = `${3 + 5}`;
+console.log(addition); //Output: 8
 
 // Note: Always use Strict equality (===)
 
@@ -33,16 +33,14 @@ console.log(addition) //Output: 8
 
 //Functions - A block of code that performs tasks
 
-
 //Function declaration
-function cube(num){
-    return num * num * num;
+function cube(num) {
+  return num * num * num;
 }
 
 //Function call - assign a variable to the returned value
 const result = cube(7);
 console.log(result);
-
 
 /*
 Different ways to write a functions
@@ -74,7 +72,7 @@ one is going to be executed and then it will exit the function.
 
 // Hoisting - calling a variable before declaring
 
-console.log(age)
+console.log(age);
 
 /*
 If we console log "age" without declaring it, ReferenceError will occur
@@ -89,7 +87,7 @@ Now, if we declare age after calling it, that Error will get replaced by "Undefi
 It actually works like this:
 */
 
-var age;            //age variable is hoisted up
+var age; //age variable is hoisted up
 console.log(age);
 age = 20;
 
@@ -100,7 +98,7 @@ age = 20;
 // Closure -  when a function remembers the variables around it even when that function is executed elsewhere.
 
 function outerFunction() {
-  let outerVariable = 'I am from outerFunction';
+  let outerVariable = "I am from outerFunction";
 
   function innerFunction() {
     console.log(outerVariable);
@@ -133,3 +131,50 @@ Difference between arrays forEach and array map is:
 => Map method allocates memory in order to store and return values,
 => it returns a new array while leaving the original array in its original state.
 */
+
+//------------------------------Part-6-------------------------------------------
+
+/*
+Asynchronous vs Synchronous:
+
+Synchronous is the one in which the code is executed line by line, sequentially &
+their tasks are completed instantly. 
+There is no time delay in the completion of the tasks for those lines of code
+*/
+
+const functionOne = () => {
+  console.log("Function one is called");
+
+  functionTwo();
+
+  console.log("Function one is called for the second time");
+};
+
+const functionTwo = () => {
+  console.log("Function two is called");
+};
+
+functionOne(); // Function one is called, Function two is called, Function one is called for the second
+
+/*
+Asynchronous will execute the code that requires waiting time in the background while continuing
+with the rest of the code execution.
+
+Lets modify the above code for better understanding
+*/
+
+const functionThree = () => {
+  console.log("Function three is called");
+
+  functionFour();
+
+  console.log("Function three is called for the second time");
+};
+
+const functionFour = () => {
+  setTimeout(() => {
+    console.log("Function four is called");
+  }, 2000); // 2s waiting period
+};
+
+functionThree(); // Function three is called, Function three is called for the second time, Function four is called
