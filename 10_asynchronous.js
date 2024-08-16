@@ -1,4 +1,4 @@
-// Asynchronous code
+// Asynchronous Javascript
 
 //------------------------------setInterval----------------------------------------------
 
@@ -64,7 +64,7 @@ const fetchUserPhoto = (username, callback) => {
 const fetchPhotoDetails = (photo, callback) => {
   setTimeout(() => {
     console.log("We got the photo details");
-    callback(["Description: Lorem Ipsum...."]);
+    callback("Description: Lorem Ipsum....");
   }, 2000);
 };
 
@@ -79,3 +79,71 @@ fetchUser1("Michael", (user) => {
     });
   });
 });
+
+//------------------------------Promises----------------------------------------------
+
+/* 
+Promises - A promise is a result of an asynchronous operation. They are the objects that return the 
+successfully data, or the error.
+
+Promise accepts a callback function which has two arguments: resolve and reject.
+Resolve is used to display the content if it is executed the data using '.then()' which also accepts a callback function
+Reject is used to display the error using '.catch()'.
+
+Modifying the above example with promises
+*/
+
+const fetchPerson = (username) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Promise - We got the user.");
+      resolve({ username });
+    }, 2000);
+  });
+};
+
+const fetchUserPhoto1 = (username) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`Promise - We got the photos for ${username}`);
+      resolve(["Photo-1", "Photo-2"]);
+    }, 2000);
+  });
+};
+
+const fetchPhotoDetails1 = (photo) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Promise - We got the photo details");
+      resolve("Description: Lorem Ipsum....");
+    }, 2000);
+  });
+};
+
+fetchPerson("Michael")
+  .then((user) => fetchUserPhoto1(user.username)) // Promise - We got the user.
+  .then((photos) => fetchPhotoDetails1(photos[0])) // Promise - We got the photos for Michael
+  .then((details) => console.log(`The details of the photo are ${details}`)); // Promise - We got the photo details, The details of the photo are Description: Lorem Ipsum....
+
+//------------------------------AsyncAwait----------------------------------------------
+
+/*
+Async/Await - It is an addition of promises. It makes the code look synchronous.
+It return promises.
+
+Await is used with async function. It pauses the execution of the function until the promise is resolved or rejected.
+& it returns the value of the promise.
+
+Lets modify the above example, again-
+Since Async await is used on the top of promises only the last section of code will be changed
+*/
+
+const displayData = async () => {
+  const user = await fetchPerson("Michael");
+  const photos = await fetchUserPhoto1(user.username);
+  const details = await fetchPhotoDetails1(photos[0]);
+
+  console.log(details);
+};
+
+displayData();
