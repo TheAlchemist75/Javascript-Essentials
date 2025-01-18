@@ -20,7 +20,7 @@ clearInterval(myInterval);
 //------------------------------setTimeout----------------------------------------------
 
 /* 
-setInterval: Allows you to wait a certain amount of time before execution
+setTimeout: Allows you to wait a certain amount of time before execution
 */
 
 const myInterval1 = setTimeout(() => console.log("Hello, World!"), 3000);
