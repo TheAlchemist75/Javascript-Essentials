@@ -178,7 +178,7 @@ const bookshelf = [
 if (bookshelf.includes("The Last Wish")) {
   console.log("Ayy, I see you are a man of culture as well!");
 } else {
-  console.log("Hmm, Never heard of it, maybe I will add it into my list.");
+  console.log("Hmm, Never heard of it, maybe I will add it into my list later.");
 }
 
 // No need to provide condition here, since includes already returns boolean values.
