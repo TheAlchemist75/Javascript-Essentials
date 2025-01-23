@@ -18,11 +18,11 @@ console.log(numbers === copiedNumbers); // true
 console.log(numbers === newNumbers); // false
 
 /* copiedNumbers points to the same location in the memory where the original number is pointing to.
-Therefore, if we change one array, both the arrays will be modified, and this is not desirable.
+Therefore, if we change one array, both arrays will be modified, and this is not desirable.
 
-Whereas, newNumbers represents completely different array.
+Whereas, newNumbers represent a completely different array.
 
-Now lets push a number into an original array and see if its updated in the new array
+Now let's push a number into an original array and see if it's updated in the new array
 */
 
 numbers.push(5);
@@ -33,7 +33,7 @@ console.log(newNumbers); // (4) [1, 2, 3, 4]
 
 // (b) Cloning Arrays - Array.slice()
 
-// Exactly similar to spread operator, having same functionality
+// Exactly similar to spread operator, having the same functionality
 
 const numbers1 = [1, 2, 3, 4];
 const copiedNumbers1 = numbers1;
@@ -61,8 +61,8 @@ const person1 = { name: "Alex", age: 20 };
 const otherPerson1 = Object.assign({}, person1);
 
 /* Object.assign() takes two properties -
-Where its going to store certain values, in our case its empty object {} &
-which vale its going to store, in our case its the whole person1 object
+Where it's going to store certain values, in our case its empty object {} &
+which value it is going to store, in our case it's the whole person1 object
 */
 
 person1.age = 22;
