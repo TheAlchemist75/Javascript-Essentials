@@ -1,6 +1,6 @@
 //------------------------------Shallow Clone----------------------------------------------
 
-// (a) Cloning Arrays - Spread Operator
+// << (a) Cloning Arrays - Spread Operator [Recommended] >>
 
 const numbers = [1, 2, 3, 4];
 console.log(...numbers); // 1 2 3 4
@@ -31,7 +31,12 @@ console.log(numbers); // (5) [1, 2, 3, 4, 5]
 console.log(copiedNumbers); // (5) [1, 2, 3, 4, 5]
 console.log(newNumbers); // (4) [1, 2, 3, 4]
 
-// (b) Cloning Arrays - Array.slice()
+// You can also update the new array without affecting the original one
+
+const updatedNewNumbers = [...newNumbers, 5];
+console.log(updatedNewNumbers); // (5) [1, 2, 3, 4, 5]
+
+// << (b) Cloning Arrays - Array.slice() >>
 
 // Exactly similar to spread operator, having the same functionality
 
@@ -45,7 +50,14 @@ console.log(numbers1); // (5) [1, 2, 3, 4, 5]
 console.log(copiedNumbers1); // (5) [1, 2, 3, 4, 5]
 console.log(newNumbers1); // (4) [1, 2, 3, 4]
 
-// (c) Cloning Objects - Spread Operator
+// If we want to update the new array without affecting the original one
+
+const updatedNewNumbers1 = newNumbers1.concat(5);
+console.log(updatedNewNumbers1); // [1, 2, 3, 4, 5]
+
+// But its better to use spread operator if we want to update the new array
+
+// << (c) Cloning Objects - Spread Operator >>
 
 const person = { name: "Alex", age: 20 };
 const otherPerson = { ...person };
@@ -55,7 +67,7 @@ person.age = 22;
 console.log(person); // {name: 'Alex', age: 22}
 console.log(otherPerson); // {name: 'Alex', age: 20}
 
-// (d) Cloning Objects - Object.assign()
+// << (d) Cloning Objects - Object.assign() >>
 
 const person1 = { name: "Alex", age: 20 };
 const otherPerson1 = Object.assign({}, person1);
